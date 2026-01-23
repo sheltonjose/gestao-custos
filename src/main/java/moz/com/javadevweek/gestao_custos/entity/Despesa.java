@@ -25,10 +25,11 @@ public class Despesa {
     private LocalDate data;
     private BigDecimal valor;
     private String categoria;
+    private String email;
     
     @CreatedDate
-    private LocalDate dataCriacao;
-    private String email;
+    private LocalDate data_criacao;
+    
 
 
 
