@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/gestao")
 public class GestaoDespesaController {
 
+    /*
+        cadastrar despesa
+        criar tabelas na base de dados
+        criar entidade
+    */
 
 
     @PostMapping("/create")
