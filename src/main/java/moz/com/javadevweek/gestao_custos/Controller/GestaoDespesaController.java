@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GestaoDespesaController {
 
     /*
-        cadastrar despesa
+        cadastrar despesa(casos de uso da aplicação)
         criar tabelas na base de dados
         criar entidade
     */
