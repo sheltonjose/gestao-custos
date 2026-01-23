@@ -30,6 +30,66 @@ public class Despesa {
     @CreatedDate
     private LocalDate data_criacao;
     
+    // Getters and Setters
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public LocalDate getData() {
+        return this.data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public BigDecimal getValor() {
+        return this.valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public String getCategoria() {
+        return this.categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getData_criacao() {
+        return this.data_criacao;
+    }
+
+    public void setData_criacao(LocalDate data_criacao) {
+        this.data_criacao = data_criacao;
+    }
+    
+
+
 
 
 
