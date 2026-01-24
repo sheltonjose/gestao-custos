@@ -4,6 +4,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import moz.com.javadevweek.gestao_custos.entity.Despesa;
+import moz.com.javadevweek.gestao_custos.useCases.CadastroDespesaUseCase;
+
 
 
 
@@ -20,8 +23,9 @@ public class GestaoDespesaController {
 
 
     @PostMapping("/create")
-    public void createDespesa(){
-
+    public void createDespesa(Despesa despesa){
+        CadastroDespesaUseCase cadastroDespesaUseCase = new CadastroDespesaUseCase();
+        cadastroDespesaUseCase.execute(despesa);
 
 
     }
