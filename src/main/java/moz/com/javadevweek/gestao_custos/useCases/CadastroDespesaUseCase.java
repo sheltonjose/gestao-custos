@@ -7,7 +7,7 @@ public class CadastroDespesaUseCase {
    //Single Responsibility Principle
 
    public void execute(Despesa despesa){
-      System.out.println(despesa);
+      System.out.println(despesa.getCategoria());
        
    }
 
