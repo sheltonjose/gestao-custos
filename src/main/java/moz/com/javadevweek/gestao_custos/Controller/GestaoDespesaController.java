@@ -21,11 +21,11 @@ public class GestaoDespesaController {
         criar tabelas na base de dados
         criar entidade
     */
-
+    CadastroDespesaUseCase cadastroDespesaUseCase;
 
     @PostMapping("/create")
     public void createDespesa(@RequestBody Despesa despesa){
-        CadastroDespesaUseCase cadastroDespesaUseCase = new CadastroDespesaUseCase();
+        
         cadastroDespesaUseCase.execute(despesa);
 
 
