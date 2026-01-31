@@ -1,5 +1,6 @@
 package moz.com.javadevweek.gestao_custos.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ public class GestaoDespesaController {
         criar tabelas na base de dados
         criar entidade
     */
+   @Autowired
     CadastroDespesaUseCase cadastroDespesaUseCase;
 
     @PostMapping("/create")
