@@ -11,7 +11,6 @@ public class CadastroDespesaUseCase {
 
    public void execute(Despesa despesa){
     
-        System.out.println(despesa);
 
        
    }
