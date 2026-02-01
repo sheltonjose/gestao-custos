@@ -1,5 +1,6 @@
 package moz.com.javadevweek.gestao_custos.useCases;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import moz.com.javadevweek.gestao_custos.entity.Despesa;
@@ -8,6 +9,9 @@ import moz.com.javadevweek.gestao_custos.entity.Despesa;
 public class CadastroDespesaUseCase {
    //SOLID
    //Single Responsibility Principle
+
+   @Autowired
+   
 
    public void execute(Despesa despesa){
     
