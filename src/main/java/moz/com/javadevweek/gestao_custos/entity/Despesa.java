@@ -24,6 +24,8 @@ public class Despesa {
     private String descricao;
     private LocalDate data;
     private BigDecimal valor;
+
+    
     private String categoria;
     private String email;
     
