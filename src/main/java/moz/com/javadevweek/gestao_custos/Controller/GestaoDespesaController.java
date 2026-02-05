@@ -2,11 +2,14 @@ package moz.com.javadevweek.gestao_custos.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import moz.com.javadevweek.gestao_custos.custom_messages.ErrorMessages;
 import moz.com.javadevweek.gestao_custos.entity.Despesa;
 import moz.com.javadevweek.gestao_custos.useCases.CadastroDespesaUseCase;
 
@@ -33,13 +36,17 @@ public class GestaoDespesaController {
         try{
            var result= cadastroDespesaUseCase.execute(despesa);
 
-           return ResponseEntity.ok(result);
+           return ResponseEntity.ok(result);//200 OK
         }catch(IllegalArgumentException e){
-            return ResponseEntity.status(400).body(e.getMessage());
+            var ErrorMessage = new ErrorMessages(e.getMessage(), "INVALID PARAMS");
+            return ResponseEntity.badRequest().body(ErrorMessage); //400 BAD REQUEST
         }
 
-        
+    }
 
+    // /gestao/find/sheltonjose02@gmail.com?data=2026-06-01
+    @GetMapping("/{email}")
+    public void findByEmailAndDate(@PathVariable String email){
 
     }
 
