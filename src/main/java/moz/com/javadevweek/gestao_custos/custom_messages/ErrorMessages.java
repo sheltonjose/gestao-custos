@@ -6,11 +6,14 @@ public class ErrorMessages {
     private String type;
 
 
+    public ErrorMessages(String message, String type) {
+        this.message = message;
+        this.type = type;
+    }
 
 
 
 
-    
     public String getMessage() {
         return message;
     }
