@@ -1,6 +1,7 @@
 package moz.com.javadevweek.gestao_custos.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,10 +27,15 @@ public class GestaoDespesaController {
     CadastroDespesaUseCase cadastroDespesaUseCase;
 
     @PostMapping("/create")
-    public Despesa createDespesa(@RequestBody Despesa despesa){
+    public ResponseEntity<?> createDespesa(@RequestBody Despesa despesa){
      
+
         try{
-            return cadastroDespesaUseCase.execute(despesa);
+           var result= cadastroDespesaUseCase.execute(despesa);
+
+           return ResponseEntity.ok(result);
+        }catch(IllegalArgumentException e){
+            return ResponseEntity.status(400).body(e.getMessage());
         }
 
         
