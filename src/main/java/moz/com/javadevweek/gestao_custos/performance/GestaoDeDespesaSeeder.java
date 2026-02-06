@@ -1,6 +1,7 @@
 package moz.com.javadevweek.gestao_custos.performance;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -26,8 +27,8 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
         for(int i= 0; i < 150000; i++){
             Despesa despesa = new Despesa();
             despesa.setDescricao("Gasto nr : " + i);
-            despesa.setValor(BigDecimal.valueOf(i + 10)); // Valor de exemplo
-
+            despesa.setValor(BigDecimal.valueOf(100 + (i % 50))); // Valor de exemplo
+            despesa.setData(LocalDate.now().minusDays(i % 30));
 
 
         }
