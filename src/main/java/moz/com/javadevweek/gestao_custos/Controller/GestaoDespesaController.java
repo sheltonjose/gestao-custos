@@ -1,5 +1,7 @@
 package moz.com.javadevweek.gestao_custos.Controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import moz.com.javadevweek.gestao_custos.custom_messages.ErrorMessages;
@@ -46,8 +49,9 @@ public class GestaoDespesaController {
 
     // /gestao/find/sheltonjose02@gmail.com?data=2026-06-01
     @GetMapping("/{email}")
-    public void findByEmailAndDate(@PathVariable String email){
-
+    public void findByEmailAndDate(@PathVariable String email, @RequestParam(required = false) LocalDate data){
+        System.out.println("email: "+email);
+        System.out.println("data: "+data);
     }
 
 
