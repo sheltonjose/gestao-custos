@@ -2,6 +2,8 @@ package moz.com.javadevweek.gestao_custos.performance;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -24,6 +26,8 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
         // Lógica para popular a base de dados com dados de teste, se necessário
         
+        List<Despesa> despesas = new ArrayList<>();
+
         for(int i= 0; i < 150000; i++){
             Despesa despesa = new Despesa();
             despesa.setDescricao("Gasto nr : " + i);
@@ -33,7 +37,7 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
             despesa.setEmail("performance@gmail.com" ); 
 
 
-
+            despesas.add(despesa);
 
 
 
