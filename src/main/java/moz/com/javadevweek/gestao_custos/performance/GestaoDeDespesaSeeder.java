@@ -27,6 +27,9 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
         // Lógica para popular a base de dados com dados de teste, se necessário
         
         List<Despesa> despesas = new ArrayList<>();
+        System.out.println("Iniciando a geração de seed.");
+
+
 
         for(int i= 0; i <= 150000; i++){
             Despesa despesa = new Despesa();
@@ -41,6 +44,7 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
 
         }
         despesaRepository.saveAll(despesas);
+        System.out.println("Seed finalizado com sucesso! Total de despesas geradas: " + despesas.size());
 
     }
 
