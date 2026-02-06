@@ -1,9 +1,12 @@
 package moz.com.javadevweek.gestao_custos.performance;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import moz.com.javadevweek.gestao_custos.entity.Despesa;
 import moz.com.javadevweek.gestao_custos.repository.DespesaRepository;
 
 
@@ -19,7 +22,17 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // Lógica para popular a base de dados com dados de teste, se necessário
-        System.out.println("Aplicação iniciada. Base de dados pronta para uso.");
+        
+        for(int i= 0; i < 150000; i++){
+            Despesa despesa = new Despesa();
+            despesa.setDescricao("Gasto nr : " + i);
+            despesa.setValor(BigDecimal.valueOf(i + 10)); // Valor de exemplo
+
+
+
+        }
+
+
     }
 
 }
