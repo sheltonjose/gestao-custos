@@ -56,7 +56,7 @@ public class GestaoDespesaController {
     @GetMapping("/{email}")
     public List<Despesa> findByEmailAndDate(@PathVariable String email, @RequestParam(required = false) LocalDate data){
     
-        return cadastroDespesaUseCase.buscarPorEmailEData(email, data);
+        return buscaDespesaUseCase.buscarPorEmailEData(email, data);
     
 
 
