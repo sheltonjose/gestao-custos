@@ -17,8 +17,7 @@ public class BuscaDespesaUseCase {
 private DespesaRepository despesaRepository;
 
 public List<Despesa> buscarPorEmailEData(String email, LocalDate data){
-    despesaRepository.findByEmail(email);
-
+    
 
 
 }
