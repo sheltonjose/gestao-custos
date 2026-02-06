@@ -1,6 +1,7 @@
 package moz.com.javadevweek.gestao_custos.Controller;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import moz.com.javadevweek.gestao_custos.custom_messages.ErrorMessages;
 import moz.com.javadevweek.gestao_custos.entity.Despesa;
+import moz.com.javadevweek.gestao_custos.useCases.BuscaDespesaUseCase;
 import moz.com.javadevweek.gestao_custos.useCases.CadastroDespesaUseCase;
 
 
@@ -32,6 +34,9 @@ public class GestaoDespesaController {
    @Autowired
     CadastroDespesaUseCase cadastroDespesaUseCase;
 
+    @Autowired
+    BuscaDespesaUseCase buscaDespesaUseCase;
+
     @PostMapping("/create")
     public ResponseEntity<?> createDespesa(@RequestBody Despesa despesa){
      
@@ -49,13 +54,13 @@ public class GestaoDespesaController {
 
     // /gestao/find/sheltonjose02@gmail.com?data=2026-06-01
     @GetMapping("/{email}")
-    public void findByEmailAndDate(@PathVariable String email, @RequestParam(required = false) LocalDate data){
-        System.out.println("email: "+email);
-        System.out.println("data: "+data);
+    public List<Despesa> findByEmailAndDate(@PathVariable String email, @RequestParam(required = false) LocalDate data){
+    
+        return cadastroDespesaUseCase.buscarPorEmailEData(email, data);
+    
+
+
+
     }
-
-
-
-
 
 }
