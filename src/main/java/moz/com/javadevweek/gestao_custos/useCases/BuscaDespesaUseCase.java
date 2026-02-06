@@ -16,7 +16,7 @@ public class BuscaDespesaUseCase {
 @Autowired
 private DespesaRepository despesaRepository;
 
-public List<Despesa> buscarPorEmailEData(String email, LocalDate data){
+public List<Despesa> execute(String email, LocalDate data){
     List<Despesa> despesas;
     if (data != null) {
         despesas = despesaRepository.findByEmailAndData(email, data);
