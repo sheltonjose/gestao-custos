@@ -28,7 +28,11 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
             Despesa despesa = new Despesa();
             despesa.setDescricao("Gasto nr : " + i);
             despesa.setValor(BigDecimal.valueOf(100 + (i % 50))); // Valor de exemplo
-            despesa.setData(LocalDate.now().minusDays(i % 30));
+            despesa.setData(LocalDate.now().minusDays(i % 30)); // Data de exemplo entre dia 1 a 30
+            despesa.setCategoria("Teste " ); 
+            
+
+
 
 
         }
