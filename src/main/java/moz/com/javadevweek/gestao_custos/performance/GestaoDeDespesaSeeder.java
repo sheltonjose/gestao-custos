@@ -28,7 +28,7 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
         
         List<Despesa> despesas = new ArrayList<>();
 
-        for(int i= 0; i < 150000; i++){
+        for(int i= 0; i <= 150000; i++){
             Despesa despesa = new Despesa();
             despesa.setDescricao("Gasto nr : " + i);
             despesa.setValor(BigDecimal.valueOf(100 + (i % 50))); // Valor de exemplo
@@ -39,10 +39,8 @@ public class GestaoDeDespesaSeeder implements CommandLineRunner {
 
             despesas.add(despesa);
 
-
-
         }
-
+        despesaRepository.saveAll(despesas);
 
     }
 
