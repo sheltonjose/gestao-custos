@@ -3,9 +3,11 @@ package moz.com.javadevweek.gestao_custos.performance;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.data.autoconfigure.web.DataWebProperties.Pageable;
+
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,9 +38,12 @@ public class GestaoDespesaPerformance {
 
     @GetMapping("/com-paginacao") //localhost:8080/page=0&size=10
     public ResponseEntity<Page<Despesa>> ListarComPaginacao(Pageable pageable){
-        long start = System.currentTimeMillis();
-        var despesas = repository.findAll(pageable);
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
 
+        var despesas = repository.findAll(pageable);
+        stopWatch.stop();
+        
         long end = System.currentTimeMillis();
         System.out.println("Tempo gasto para listar despesas com paginação: " + (end - start) + " ms");
         return ResponseEntity.ok(despesas);
