@@ -43,9 +43,8 @@ public class GestaoDespesaPerformance {
 
         var despesas = repository.findAll(pageable);
         stopWatch.stop();
-        
-        long end = System.currentTimeMillis();
-        System.out.println("Tempo gasto para listar despesas com paginação: " + (end - start) + " ms");
+
+        System.out.println("Tempo gasto para listar despesas com paginação: " + stopWatch.getTotalTimeMillis() + " ms");
         return ResponseEntity.ok(despesas);
     }
 
