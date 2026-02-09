@@ -108,3 +108,6 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection wa
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 56 more
+2026-02-07 01:19:50.478293+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT count(* [*]FROM DESPESAS"; expected ")"; SQL statement:
+SELECT count(* FROM DESPESAS [42001-240]
