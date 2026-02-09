@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import moz.com.javadevweek.gestao_custos.entity.Despesa;
 import moz.com.javadevweek.gestao_custos.repository.DespesaRepository;
@@ -12,6 +14,7 @@ import moz.com.javadevweek.gestao_custos.repository.DespesaRepository;
 
 
 @RequestMapping("/gestao/performance")
+@RestController
 public class GestaoDespesaPerformance {
 
 
@@ -19,7 +22,7 @@ public class GestaoDespesaPerformance {
     @Autowired
      DespesaRepository repository;
 
-
+    @GetMapping("/sem-paginacao")
     public ResponseEntity<List<Despesa>> ListarSemPaginacao(){
         long start = System.currentTimeMillis();
         var despesas = repository.findAll();
@@ -29,6 +32,7 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
+    @Get
 
 
 
