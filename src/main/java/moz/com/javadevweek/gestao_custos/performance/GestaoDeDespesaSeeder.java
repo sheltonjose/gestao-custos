@@ -13,7 +13,7 @@ import moz.com.javadevweek.gestao_custos.entity.Despesa;
 import moz.com.javadevweek.gestao_custos.repository.DespesaRepository;
 
 
-@Component
+//@Component
 public class GestaoDeDespesaSeeder implements CommandLineRunner {
 
 
