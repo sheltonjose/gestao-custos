@@ -32,7 +32,7 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
-    @GetMapping("/com-paginacao") //
+    @GetMapping("/com-paginacao") //localhost
     public ResponseEntity<List<Despesa>> ListarComPaginacao(){
         long start = System.currentTimeMillis();
         var despesas = repository.findAll();
