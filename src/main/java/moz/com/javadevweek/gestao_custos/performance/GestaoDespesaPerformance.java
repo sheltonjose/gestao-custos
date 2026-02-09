@@ -32,7 +32,15 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
-    @Get
+    @GetMapping("/com-paginacao") //
+    public ResponseEntity<List<Despesa>> ListarComPaginacao(){
+        long start = System.currentTimeMillis();
+        var despesas = repository.findAll();
+
+        long end = System.currentTimeMillis();
+        System.out.println("Tempo gasto para listar despesas com paginação: " + (end - start) + " ms");
+        return ResponseEntity.ok(despesas);
+    }
 
 
 
