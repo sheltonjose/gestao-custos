@@ -49,6 +49,8 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
+
+    
         @GetMapping("/com-paginacao/{email}") //localhost:8080/page=0&size=10
     public ResponseEntity<Page<Despesa>> ListarComPaginacao(@PathVariable String email,  Pageable pageable){
         StopWatch stopWatch = new StopWatch();
