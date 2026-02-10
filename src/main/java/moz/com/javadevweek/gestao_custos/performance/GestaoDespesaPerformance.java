@@ -63,8 +63,18 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
-    @GetMapping("/cache")
-    
+    @GetMapping("/cache/{email}")
+    public ResponseEntity<Page<Despesa>> cacheComPaginacao(@PathVariable String email,  Pageable pageable){
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+
+        var despesas = repository.findByEmail(email,pageable);
+        stopWatch.stop();
+
+        System.out.println("Tempo gasto para listar despesas com paginação: " + stopWatch.getTotalTimeMillis() + " ms");
+        return ResponseEntity.ok(despesas);
+    }
+
 
 
 
