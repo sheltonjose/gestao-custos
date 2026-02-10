@@ -63,6 +63,9 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
+    @GetMapping("/cache")
+    
+
 
 
 
