@@ -3,7 +3,7 @@ package moz.com.javadevweek.gestao_custos.performance;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +20,7 @@ import moz.com.javadevweek.gestao_custos.repository.DespesaRepository;
 
 @RequestMapping("/gestao/performance")
 @RestController
+@EnableCaching
 public class GestaoDespesaPerformance {
 
 
