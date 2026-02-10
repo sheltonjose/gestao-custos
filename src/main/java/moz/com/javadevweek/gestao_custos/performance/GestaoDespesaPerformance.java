@@ -3,6 +3,7 @@ package moz.com.javadevweek.gestao_custos.performance;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -64,6 +65,7 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
+    @Cacheable(value = "gastosPorEmailCache", key="#email + '-' + #Pageable.pageNumber + '-' + #Pageable.pageSize + '-' ")
     @GetMapping("/cache/{email}")
     public ResponseEntity<Page<Despesa>> cacheComPaginacao(@PathVariable String email,  Pageable pageable){
         StopWatch stopWatch = new StopWatch();
