@@ -48,6 +48,21 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
+        @GetMapping("/com-paginacao") //localhost:8080/page=0&size=10
+    public ResponseEntity<Page<Despesa>> ListarComPaginacao(Pageable pageable){
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+
+        var despesas = repository.findAll(pageable);
+        stopWatch.stop();
+
+        System.out.println("Tempo gasto para listar despesas com paginação: " + stopWatch.getTotalTimeMillis() + " ms");
+        return ResponseEntity.ok(despesas);
+    }
+
+
+
+
 
 
 
