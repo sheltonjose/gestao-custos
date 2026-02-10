@@ -50,13 +50,13 @@ public class GestaoDespesaPerformance {
     }
 
 
-    
+
         @GetMapping("/com-paginacao/{email}") //localhost:8080/page=0&size=10
     public ResponseEntity<Page<Despesa>> ListarComPaginacao(@PathVariable String email,  Pageable pageable){
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
-        var despesas = repository.findAll(pageable);
+        var despesas = repository.findByEmail(email,pageable);
         stopWatch.stop();
 
         System.out.println("Tempo gasto para listar despesas com paginação: " + stopWatch.getTotalTimeMillis() + " ms");
