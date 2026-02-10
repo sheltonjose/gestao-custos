@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,8 +49,8 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
-        @GetMapping("/com-paginacao") //localhost:8080/page=0&size=10
-    public ResponseEntity<Page<Despesa>> ListarComPaginacao(Pageable pageable){
+        @GetMapping("/com-paginacao/{email}") //localhost:8080/page=0&size=10
+    public ResponseEntity<Page<Despesa>> ListarComPaginacao(@PathVariable String email,  Pageable pageable){
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
