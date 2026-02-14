@@ -53,7 +53,7 @@ public class GestaoDespesaPerformance {
 
 
 
-        @GetMapping("/com-paginacao/{email}") //localhost:8080/page=0&size=10
+    @GetMapping("/com-paginacao/{email}") //localhost:8080/sheltonjose02@gmail.com?page=0&size=10
     public ResponseEntity<Page<Despesa>> ListarComPaginacao(@PathVariable String email,  Pageable pageable){
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
@@ -65,7 +65,7 @@ public class GestaoDespesaPerformance {
         return ResponseEntity.ok(despesas);
     }
 
-    @Cacheable(value = "gastosPorEmailCache", key="#email + '-' + #Pageable.pageNumber + '-' + #Pageable.pageSize + '-' ")
+    @Cacheable(value = "gastosPorEmailCache", key="#email + '-' + #pageable.pageNumber + '-' + #pageable.pageSize + '-' ")
     @GetMapping("/cache/{email}")
     public ResponseEntity<Page<Despesa>> cacheComPaginacao(@PathVariable String email,  Pageable pageable){
         StopWatch stopWatch = new StopWatch();
