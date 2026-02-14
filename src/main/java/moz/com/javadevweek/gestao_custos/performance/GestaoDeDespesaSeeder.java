@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
 import moz.com.javadevweek.gestao_custos.entity.Despesa;
 import moz.com.javadevweek.gestao_custos.repository.DespesaRepository;
