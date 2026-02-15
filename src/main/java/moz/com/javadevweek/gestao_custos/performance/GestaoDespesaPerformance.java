@@ -74,7 +74,7 @@ public class GestaoDespesaPerformance {
         var despesas = repository.findByEmail(email,pageable);
         stopWatch.stop();
 
-        System.out.println("Tempo gasto para listar despesas com paginação: " + stopWatch.getTotalTimeMillis() + " ms");
+        System.out.println("Tempo gasto para listar despesas com paginaçãoo: " + stopWatch.getTotalTimeMillis() + " ms");
         return ResponseEntity.ok(despesas);
     }
 
