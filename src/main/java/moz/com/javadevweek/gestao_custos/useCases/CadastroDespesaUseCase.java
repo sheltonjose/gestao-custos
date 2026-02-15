@@ -19,7 +19,7 @@ public class CadastroDespesaUseCase {
       if(despesa.getCategoria()==null || despesa.getData()==null || despesa.getDescricao()==null || despesa.getEmail()==null || despesa.getValor()==null){
          throw new IllegalArgumentException("Todos os campos devem ser preenchidos");
 
-
+         
       }
 
 
