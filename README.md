@@ -1,2 +1,2 @@
 # gestao-custos
-Projecto para gestão de custos pessoais
+Projecto para gestão de despesas pessoais.
