@@ -1,5 +1,5 @@
 #Usa a imagem do Maven para compilar a app
-FROM maven:3.8.6-eclipse-temurin-21 AS buildar
+FROM maven:3.9.6-eclipse-temurin-21 AS buildar
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
